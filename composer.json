@@ -1,0 +1,15 @@
+{
+    "name": "esse03/llm-azure",
+    "autoload": {
+        "psr-4": {
+            "Esse03\\LlmAzure\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Esse03",
+            "email": "essetijdelijk@gmail.com"
+        }
+    ],
+    "require": {}
+}
