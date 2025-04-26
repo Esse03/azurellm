@@ -1,9 +1,11 @@
-import {AzureChatOpenAI} from "@langchain/openai";
+import express from "express";
+import cors from "cors";
+import router from "./router.js";
 
-const model:AzureChatOpenAI = new AzureChatOpenAI({
-    temperature: 0.3,
-    verbose: true
-});
+const app = express();
+app.use(cors());
+app.use(express.json());
 
-const joke = await model.invoke('tell me a dirty joke');
-console.log(joke.content);
+app.use("/", router);
+
+app.listen(process.env.PORT);
