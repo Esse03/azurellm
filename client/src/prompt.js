@@ -12,7 +12,7 @@ export async function prompt(e) {
     // Save human message locally first
     history.push(["human", promptText]);
 
-    renderReply(promptText);
+    renderReply(promptText, "human");
 
     const options = {
         method: 'POST',
@@ -39,7 +39,7 @@ export async function prompt(e) {
 
             console.log(data);
 
-            renderReply(data)
+            renderReply(data, "assistant")
         } else {
             console.error("Request failed with status:", response.status);
         }
